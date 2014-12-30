@@ -1,9 +1,6 @@
 package com.andre.trainingm1.app;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,10 +12,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SearchView;
+import android.widget.*;
+import com.andre.trainingm1.app.session.PositionArrayList;
 import com.andre.trainingm1.app.fragment.FragmentGridNews;
 import com.andre.trainingm1.app.fragment.HomeFragment;
 
@@ -41,35 +36,43 @@ private String[] menulist;
         listViewutama.setAdapter(adapter);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+
         listViewutama.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                setFragmentContent(i);
-                setTitle(adapter.getItem(i));
-
+                PositionArrayList pos=new PositionArrayList(MenuUtama.this);
+                pos.setInt(i);
+                setFragmentContent("position",new PositionArrayList(getApplicationContext()).getInt());
             }
         });
+        setFragmentContent("position",new PositionArrayList(getApplicationContext()).getInt());
         drawertoggle=new ActionBarDrawerToggle(this,drawerLayout, 0, 0 ){
             public void onDrawerClosed(View view){
+                invalidateOptionsMenu();
             }
-            public void onDrawerOpened(View drawerview){
+            public void onDrawerOpened(View drawerView){
+                invalidateOptionsMenu();
             }
         };
         drawerLayout.setDrawerListener(drawertoggle);
+
     }
 
-private void setFragmentContent(int position){
+private void setFragmentContent(String alfa,int position){
     drawerLayout.closeDrawer(listViewutama);
     Fragment fragment=getFragmentContent(position);
     FragmentManager fragmentManager=getSupportFragmentManager();
-
     if (fragment!=null){
+        setTitle(adapter.getItem(position));
         fragmentManager.beginTransaction().replace(R.id.detailutama,fragment).commit();
+        listViewutama.setItemChecked(position,true);
 
     }
     else {
         Intent out=new Intent(this,MainActivity.class);
         startActivity(out);
+        PositionArrayList ForClear=new PositionArrayList(this);
+        ForClear.clearInt();
         finish();
     }
 }
@@ -86,6 +89,8 @@ private Fragment getFragmentContent(int position){
 
 @Override
     public boolean onCreateOptionsMenu(Menu menu){
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.menu_menu_utama, menu);
 return super.onCreateOptionsMenu(menu);
 }
 @Override
@@ -94,7 +99,7 @@ return super.onCreateOptionsMenu(menu);
         return true;
     }
     switch (item.getItemId()) {
-    
+
     }
     return super.onOptionsItemSelected(item);
     }
@@ -104,5 +109,7 @@ return super.onCreateOptionsMenu(menu);
         super.onPostCreate(savedInstancestate);
         drawertoggle.syncState();
     }
+
+
 }
 

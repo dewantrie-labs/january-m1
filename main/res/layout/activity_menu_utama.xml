@@ -16,6 +16,7 @@
             android:choiceMode="multipleChoice"
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
+            android:background="@color/blue"
             android:layout_gravity="start">
     </ListView>
 

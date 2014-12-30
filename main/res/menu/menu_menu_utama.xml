@@ -4,7 +4,9 @@
     tools:context="com.andre.trainingm1.app.MenuUtama" >
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
-        android:orderInCategory="100"
-        app:showAsAction="ifRoom|withText" />
+        app:showAsAction="never" />
+    <item android:id="@+id/about"
+          android:title="about"
+          app:showAsAction="never"/>
 
 </menu>
