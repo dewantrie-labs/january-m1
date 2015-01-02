@@ -1,10 +1,8 @@
 package com.andre.trainingm1.app;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -14,10 +12,9 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent=new Intent(this,MenuUtama.class);
+        Intent intent = new Intent(this, MenuUtama.class);
         startActivity(intent);
     }
-
 
 
 }

@@ -6,19 +6,24 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/imageViewdetailhome" android:layout_gravity="center|top"/>
+        android:id="@+id/imageViewdetailhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top" />
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
-            android:id="@+id/textViewtitledetailhome" android:layout_gravity="center_horizontal|top"/>
+        android:id="@+id/textViewtitledetailhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:id="@+id/textViewinfodetailhome" android:layout_gravity="left|center_vertical"/>
+        android:id="@+id/textViewinfodetailhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|center_vertical"
+        android:text="Medium Text"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 </FrameLayout>

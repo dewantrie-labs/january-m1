@@ -5,7 +5,8 @@
     tools:context="com.andre.trainingm1.app.fragment.HomeFragment">
 
     <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/listView2" android:layout_gravity="left|top"/>
+        android:id="@+id/listView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|top" />
 </FrameLayout>

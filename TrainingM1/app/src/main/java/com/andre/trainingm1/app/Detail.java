@@ -1,9 +1,7 @@
 package com.andre.trainingm1.app;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v7.app.ActionBarActivity;
 
 
 public class Detail extends ActionBarActivity {
@@ -13,7 +11,6 @@ public class Detail extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
     }
-
 
 
 }

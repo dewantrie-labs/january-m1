@@ -12,18 +12,21 @@ public class PositionArrayList {
 
 
     public PositionArrayList(Context context) {
-        sharedPreferences =context.getSharedPreferences("position",Context.MODE_PRIVATE);
+        sharedPreferences = context.getSharedPreferences("position", Context.MODE_PRIVATE);
         edit = sharedPreferences.edit();
         edit.commit();
     }
-    public void setInt(int pos){
-        edit.putInt("position",pos);
+
+    public Integer getInt() {
+        return sharedPreferences.getInt("position", 0);
+    }
+
+    public void setInt(int pos) {
+        edit.putInt("position", pos);
         edit.commit();
     }
-    public Integer getInt(){
-        return sharedPreferences.getInt("position",0);
-    }
-    public void clearInt(){
+
+    public void clearInt() {
         edit.clear();
         edit.commit();
     }

@@ -1,18 +1,14 @@
 package com.andre.trainingm1.app.fragment;
 
-import android.app.Activity;
-import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.andre.trainingm1.app.R;
 import com.andre.trainingm1.app.models.InfoModels;
 
@@ -24,7 +20,6 @@ import java.io.InputStream;
  * Activities that contain this fragment must implement the
  * {@link DetailHome.OnFragmentInteractionListener} interface
  * to handle interaction events.
- *
  */
 public class DetailHome extends Fragment {
     private static InfoModels data;
