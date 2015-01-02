@@ -8,7 +8,10 @@
 
    <FrameLayout android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/detailutama"></FrameLayout>
+                android:choiceMode="multipleChoice"
+                android:id="@+id/detailutama">
+
+           </FrameLayout>
     <ListView
         android:id="@+id/listviewutama"
             android:layout_width="@dimen/listutama"

@@ -6,4 +6,7 @@
     <dimen name="imageheight">100dp</dimen>
     <dimen name="textgridheight">200dp</dimen>
     <dimen name="paddingImage">10dp</dimen>
+    <dimen name="sizeimagelist">40dp</dimen>
+    <dimen name="fragmentleftwidth">150dp</dimen>
+    <dimen name="fragmentrightwidth">200dp</dimen>
 </resources>

@@ -18,7 +18,8 @@
         </activity>
         <activity
             android:name="com.andre.trainingm1.app.MenuUtama"
-            android:label="@string/title_activity_menu_utama">
+            android:label="@string/title_activity_menu_utama"
+            android:configChanges="orientation">
         </activity>
         <activity
             android:name="com.andre.trainingm1.app.Detail"
@@ -30,7 +31,7 @@
             android:parentActivityName="com.andre.trainingm1.app.MenuUtama" >
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value=".MainActivity" />
+                    android:value=".MenuUtama" />
         </activity>
     </application>
 

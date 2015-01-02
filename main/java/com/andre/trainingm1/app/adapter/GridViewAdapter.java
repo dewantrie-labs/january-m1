@@ -2,7 +2,9 @@ package com.andre.trainingm1.app.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -55,6 +57,7 @@ public GridViewAdapter(Context context){
         FrameLayout.LayoutParams layoutParams=new FrameLayout.LayoutParams(200,200);
        ImageNews.setImageResource(ForImage[position]);
         ImageNews.setLayoutParams(layoutParams);
+
         return view;
     }
 }

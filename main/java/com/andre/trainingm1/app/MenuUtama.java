@@ -13,12 +13,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import com.andre.trainingm1.app.fragment.DetailHome;
 import com.andre.trainingm1.app.session.PositionArrayList;
 import com.andre.trainingm1.app.fragment.FragmentGridNews;
 import com.andre.trainingm1.app.fragment.HomeFragment;
 
 
-public class MenuUtama extends ActionBarActivity {
+public class MenuUtama extends ActionBarActivity implements HomeFragment.OnCall{
 private String[] menulist;
    private ListView listViewutama;
     private ArrayAdapter<String> adapter;
@@ -110,6 +111,15 @@ return super.onCreateOptionsMenu(menu);
         drawertoggle.syncState();
     }
 
+
+    @Override
+    public void onCall(Object o) {
+    getSupportFragmentManager().beginTransaction().replace(R.id.detailutama, DetailHome.newInstance(o)).commit();
+    }
+    @Override
+    public void onBackPressed() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.detailutama,new HomeFragment()).commit();
+    }
 
 }
 

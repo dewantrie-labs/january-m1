@@ -2,32 +2,96 @@ package com.andre.trainingm1.app.fragment;
 
 
 
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
 import com.andre.trainingm1.app.R;
+import com.andre.trainingm1.app.adapter.HomeAdapter;
+import com.andre.trainingm1.app.models.InfoModels;
+import com.google.gson.Gson;
+
+import java.io.*;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  *
  */
-public class HomeFragment extends Fragment {
-
-
-    public HomeFragment() {
-        // Required empty public constructor
+public class HomeFragment extends ListFragment{
+    public OnCall listener;
+    public interface OnCall{
+        public void onCall(Object o);
     }
+    @Override
+    public void onAttach(Activity activity){
+        super.onAttach(activity);
+        if (activity instanceof OnCall) {
+        listener=(OnCall)activity;
+        }
+        else{
+            throw new ClassCastException(activity.toString()
+                    + " must implemenet MyListFragment.OnItemSelectedListener");
+        }
+        }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        new ImageSet().execute();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return super.onCreateView(inflater,container,savedInstanceState);
     }
 
+
+    private class ImageSet extends AsyncTask<Void,Void,InfoModels[]>{
+    @Override
+    protected InfoModels[] doInBackground(Void... voids) {
+        Gson gson=new Gson();
+        try {
+            InputStream inputStream = getActivity().getAssets().open("DataInfo.json");
+            Reader reader = new InputStreamReader(inputStream);
+            try {
+                InfoModels[] info = gson.fromJson(reader, InfoModels[].class);
+                return info;
+            }
+            finally {
+                reader.close();
+            }
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    protected void onPostExecute(final InfoModels[] result){
+            if (result!=null){
+                final HomeAdapter homeAdapter=new HomeAdapter(getActivity(), result);
+                setListAdapter(homeAdapter);
+                homeAdapter.notifyDataSetChanged();
+                getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    InfoModels info=(InfoModels)homeAdapter.getItem(i);
+                        listener.onCall(info);
+                    }
+                });
+            }
+    }
+}
 
 }
