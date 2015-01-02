@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <ImageView
+            android:layout_width="@dimen/sizeimagelist"
+            android:layout_height="@dimen/sizeimagelist"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/ImageViewhome"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/ImageViewhome"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/textViewhometitle"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewhometitle"
+            android:layout_below="@+id/textViewhometitle"
+            android:text="Large Text"
+            android:id="@+id/textViewhomeinfo"/>
+</RelativeLayout><!-- From: file:/D:/Untitled%20Folder/TrainingM1/app/src/main/res/layout/homelayout.xml -->

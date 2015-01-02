@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    tools:context="com.andre.trainingm1.app.fragment.FragmentGridNews">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imagenews"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:id="@+id/textviewgrid" android:layout_gravity="bottom"/>
+
+</FrameLayout>

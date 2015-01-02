@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="D:\android\TrainingM1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a80cab6e8cc8c8ed223055e2f8c9835dbea5bbfc.jar"
+        jar="D:\android\TrainingM1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03"/>
+    <item
+        dex="D:\android\TrainingM1\app\build\intermediates\pre-dexed\debug\classes-42065494db71b820a8b6f04180a30e09a0e22167.jar"
+        jar="D:\android\TrainingM1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8"/>
+    <item
+        dex="D:\Untitled Folder\TrainingM1\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-22c78b426e0f123b5ff592593868febf2d5d4f2f.jar"
+        jar="D:\Untitled Folder\TrainingM1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03"/>
+    <item
+        dex="D:\android\TrainingM1\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-2c7b3f93a4765de67fc456e30fee656c798d7e65.jar"
+        jar="D:\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35"/>
+    <item
+        dex="D:\Untitled Folder\TrainingM1\app\build\intermediates\pre-dexed\debug\classes-788533253a31a86bcc0467e621702cfcb7c201ac.jar"
+        jar="D:\Untitled Folder\TrainingM1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7"/>
+    <item
+        dex="D:\android\TrainingM1\app\build\intermediates\pre-dexed\debug\classes-4a053a14a464a842020517586ff5d9c2464703f4.jar"
+        jar="D:\android\TrainingM1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7"/>
+    <item
+        dex="D:\android\TrainingM1\app\build\intermediates\pre-dexed\debug\gson-2.3.1-184f4bacd5f91c52a278e6ab1a45f748561cfc05.jar"
+        jar="D:\project\spektra-android\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757"/>
+    <item
+        dex="D:\Untitled Folder\TrainingM1\app\build\intermediates\pre-dexed\debug\classes-9fc48af7cbe6a0c6d85941de13a13ed08ad6ae0d.jar"
+        jar="D:\Untitled Folder\TrainingM1\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8"/>
+
+</pre-dex-items>
