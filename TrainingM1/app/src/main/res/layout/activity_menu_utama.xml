@@ -9,7 +9,8 @@
    <FrameLayout android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:choiceMode="multipleChoice"
-                android:id="@+id/detailutama">
+                android:id="@+id/detailutama"
+                android:background="@color/deepPurple100">
 
            </FrameLayout>
     <ListView
@@ -19,7 +20,7 @@
             android:choiceMode="multipleChoice"
             android:divider="@android:color/transparent"
             android:dividerHeight="0dp"
-            android:background="@color/blue"
+            android:background="@color/brown200"
             android:layout_gravity="start">
     </ListView>
 

@@ -2,6 +2,7 @@ package com.andre.trainingm1.app;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -35,6 +36,7 @@ private String[] menulist;
         listViewutama=(ListView)findViewById(R.id.listviewutama);
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,menulist);
         listViewutama.setAdapter(adapter);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(resources.getColor(R.color.orange900)));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
 

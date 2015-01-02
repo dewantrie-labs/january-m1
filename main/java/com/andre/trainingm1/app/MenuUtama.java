@@ -100,7 +100,8 @@ private Fragment getFragmentContent(int position){
     inflater.inflate(R.menu.menu_menu_utama, menu);
     SearchManager searchManager=(SearchManager)getSystemService(Context.SEARCH_SERVICE);
     SearchView searchView=(SearchView)menu.findItem(R.id.searchData).getActionView();
-    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+    if(searchManager != null){
+    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));}
 return true;
 }
 @Override
