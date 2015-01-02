@@ -1,5 +1,7 @@
 package com.andre.trainingm1.app;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v4.app.Fragment;
@@ -13,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import android.widget.SearchView;
 import com.andre.trainingm1.app.fragment.DetailHome;
 import com.andre.trainingm1.app.session.PositionArrayList;
 import com.andre.trainingm1.app.fragment.FragmentGridNews;
@@ -25,18 +28,21 @@ private String[] menulist;
     private ArrayAdapter<String> adapter;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle drawertoggle;
+    private TextView result;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_utama);
         Resources resources=getResources();
         menulist=resources.getStringArray(R.array.option);
+        result=(TextView)findViewById(android.support.v7.appcompat.R.id.search_src_text);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawe);
         listViewutama=(ListView)findViewById(R.id.listviewutama);
         adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,menulist);
         listViewutama.setAdapter(adapter);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
+        handleIntent(getIntent());
 
         listViewutama.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -92,17 +98,18 @@ private Fragment getFragmentContent(int position){
     public boolean onCreateOptionsMenu(Menu menu){
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.menu_menu_utama, menu);
-return super.onCreateOptionsMenu(menu);
+    SearchManager searchManager=(SearchManager)getSystemService(Context.SEARCH_SERVICE);
+    SearchView searchView=(SearchView)menu.findItem(R.id.searchData).getActionView();
+    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+return true;
 }
 @Override
     public boolean onOptionsItemSelected(MenuItem item){
     if (drawertoggle.onOptionsItemSelected(item)) {
         return true;
     }
-    switch (item.getItemId()) {
-
-    }
-    return super.onOptionsItemSelected(item);
+    return true;
+   // return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -121,5 +128,16 @@ return super.onCreateOptionsMenu(menu);
         getSupportFragmentManager().beginTransaction().replace(R.id.detailutama,new HomeFragment()).commit();
     }
 
+    @Override
+    protected void onNewIntent(Intent intent){
+        setIntent(intent);
+        handleIntent(intent);
+    }
+    public void handleIntent(Intent intent){
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())){
+            String query=intent.getStringExtra(SearchManager.QUERY);
+            result.setText(query);
+        }
+    }
 }
 
